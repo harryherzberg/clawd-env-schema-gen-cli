@@ -1,0 +1,27 @@
+{
+  "name": "clawd-env-schema-gen-cli",
+  "version": "1.0.0",
+  "description": "CLI to generate JSONSchema from .env.example + pro validator code ($19 Gumroad)",
+  "main": "index.js",
+  "bin": {
+    "clawd-env-schema-gen": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"ok\""
+  },
+  "keywords": [
+    "env",
+    "schema",
+    "json-schema",
+    "dotenv",
+    "devops"
+  ],
+  "author": "Clawdbot App Shipper",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
