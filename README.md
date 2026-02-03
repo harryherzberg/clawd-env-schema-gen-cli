@@ -1,1 +1,37 @@
-# clawd-env-schema-gen-cli 🚀\n\n## What it does\nParse .env.example → JSONSchema (types inferred from values) + pro ajv validator.js.\n\nFree: schema.json\nPro: --validator (license-gated)\n\n## Who it's for\nDev teams, OSS maintainers. Tired of manual schema from env.example?\n\n**Buyer:** DevOps/Backend devs\n**Why pay today?** Instant schema + validator code. Prevents env bugs in CI/prod.\n**Price:** $19 lifetime pro license (Gumroad)\n\n## How to run\n```\nnpx clawd-env-schema-gen-cli [file]\n# or npm i -g clawd-env-schema-gen-cli\nclawd-env-schema-gen sample.env.example\n```\n\nPro:\n```\nclawd-env-schema-gen --license PRO-ABC12345 --validator\n```\n\n## Example\nInput sample.env.example:\n```\nDB_HOST=localhost\nDB_PORT=5432\nDEBUG=true\nAPI_KEY=\n```\nOutput schema.json:\n```json\n{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"DB_HOST\": {\"type\": \"string\"},\n    \"DB_PORT\": {\"type\": \"number\"},\n    \"DEBUG\": {\"type\": \"boolean\"},\n    \"API_KEY\": {\"type\": \"string\"}\n  },\n  \"required\": [\"DB_HOST\", \"DB_PORT\", \"DEBUG\", \"API_KEY\"]\n}\n```\n\nPro validator.js (ajv):\n```js\nconst validate = require('./validator.js');\nconst env = {DB_HOST: 'db', DB_PORT: 5432, DEBUG: true, API_KEY: 'sk123'};\nif (!validate(env)) console.log(validate.errors);\n```\n\n## Pro License\nBuy $19: [Gumroad](https://your-gumroad.com/l/clawd-env-schema-gen) → PRO-XXXXXXXX\n\n## Ship Ready\n- MVP tested\n- tgz: npm pack\n- GH repo: clawd-env-schema-gen-cli\n\nBuilt by Clawdbot cron.
+<div align="center">
+
+# 🔧 Env Schema Gen
+
+**.env.example to JSON Schema + validator generator**
+
+<img src="https://img.shields.io/badge/Pro-%2419-10b981?style=for-the-badge&logo=gumroad" alt="Pro 19" /> <a href="https://harryherzberg.gumroad.com/l/env-schema-gen">Buy Pro</a>
+</div>
+
+## ✨ Features
+
+| Feature | Benefit |
+|---------|---------|
+| Infer Types | From example values |
+| JSON Schema | Standard compliant |
+| AJV Validator | Pro JS code gen |
+| Required Fields | Auto detect |
+| CI Safe | No runtime deps |
+
+## 🚀 Quick Start
+
+```bash
+npx env-schema-gen@latest --help
+# Or global: npm i -g env-schema-gen
+```
+
+## 💎 Go Pro - Lifetime $19
+
+- ✅ Unlimited runs
+- 📄 PDF reports
+- 🏢 Commercial use
+- 💬 Support
+
+<img src="https://img.shields.io/badge/Buy_Pro-%2419-FF6B35?style=for-the-badge&logo=gumroad" alt="Buy Pro" /> <a href="https://harryherzberg.gumroad.com/l/env-schema-gen">Buy Now</a>
+
+---
+👨‍💻 [Harry Herzberg](https://github.com/harryherzberg) | 🐙 [GitHub](https://github.com/harryherzberg/clawd/tree/main/apps/env-schema-gen-cli)
